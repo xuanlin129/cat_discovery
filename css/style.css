@@ -112,3 +112,19 @@
     transform: scale(1);
   }
 }
+
+.word-wrap {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .shadow {
+    width: 50vw;
+  }
+  .text {
+    width: 110px;
+  }
+  .word-wrap {
+    display: block;
+  }
+}
