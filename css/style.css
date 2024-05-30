@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrap {
+  height: 100vh; /*給 Safari 以外的瀏覽器讀取*/
+  height: calc(var(--vh, 1vh) * 100);
+  background: rgb(183, 176, 166);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10% 20% 40% 30%/ 30% 40% 20% 10%;
+}
+
+.cat {
+  position: relative;
+}
+
+.eyeleft,
+.eyeright {
+  background: #fff;
+  width: 3%;
+  height: 3%;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.eyeleft {
+  top: 31%;
+  right: 45%;
+}
+
+.eyeright {
+  top: 29%;
+  right: 35%
+}
+
+.shadow {
+  width: 30vw;
+}
+
+.text {
+  position: absolute;
+  width: 150px;
+  bottom: 90%;
+  left: 70%;
+  text-align: center;
+  background: rgb(253, 249, 238);
+  padding: 10px;
+  border-radius: 1rem;
+  font-family: '微軟正黑體';
+  font-weight: bold;
+  box-shadow: 0 0 10px #ccc;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.text::before {
+  content: '';
+  width: 10%;
+  height: 30%;
+  background: linear-gradient(135deg, rgb(253, 249, 238) 50%, transparent 50%);
+  position: absolute;
+  top: 100%;
+  left: 10%;
+}
+
+.popup {
+  width: 1%;
+  height: auto;
+  max-height: 90vh;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+.popup>img {
+  width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.center-dot {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  background: #000;
+  z-index: 50;
+  border-radius: 50%;
+  transition: 2s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
